@@ -30,24 +30,8 @@ const AuthPage = ({ hasAdmin, setHasAdmin }) => {
     params: { authType },
   } = useRouteMatch('/auth/:authType');
   const query = useQuery();
-  const Login = useEnterprise(
-    LoginCE,
-    async () => (await import('../../../../ee/admin/pages/AuthPage/components/Login')).LoginEE
-  );
-  const forms = useEnterprise(
-    FORMS,
-    async () => (await import('../../../../ee/admin/pages/AuthPage/constants')).FORMS,
-    {
-      combine(ceForms, eeForms) {
-        return {
-          ...ceForms,
-          ...eeForms,
-        };
-      },
-
-      defaultValue: FORMS,
-    }
-  );
+  const Login = LoginCE
+  const forms = FORMS;
   const [{ formErrors, modifiedData, requestError }, dispatch] = useReducer(
     reducer,
     initialState,

@@ -117,7 +117,7 @@ module.exports = ({
         },
         {
           test: /\.css$/i,
-          use: ['style-loader', 'css-loader'],
+          use: ['style-loader', 'css-loader','postcss-loader'],
         },
         {
           test: /\.(svg|eot|otf|ttf|woff|woff2)$/,

@@ -5,7 +5,6 @@ const { green } = require('chalk');
 const strapiAdmin = require('@strapi/admin');
 const { getConfigUrls } = require('@strapi/utils');
 
-const ee = require('../../utils/ee');
 const addSlash = require('../../utils/addSlash');
 const strapi = require('../../index');
 const getEnabledPlugins = require('../../core/loaders/plugins/get-enabled-plugins');
@@ -30,7 +29,6 @@ module.exports = async ({ buildDestDir, forceBuild = true, optimization, srcDir 
   // Always remove the .cache and build folders
   await strapiAdmin.clean({ appDir: srcDir, buildDestDir });
 
-  ee.init(srcDir);
 
   return strapiAdmin
     .build({

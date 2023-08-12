@@ -3,98 +3,39 @@
  *
  */
 
-import React, { useMemo } from 'react';
+import React from 'react';
 
-import { Box, Grid, GridItem, Layout, Main } from '@strapi/design-system';
-import { LoadingIndicatorPage, useGuidedTour } from '@strapi/helper-plugin';
-import { Helmet } from 'react-helmet';
-import { FormattedMessage } from 'react-intl';
-import { useHistory } from 'react-router-dom';
-import styled from 'styled-components';
 
-import GuidedTourHomepage from '../../components/GuidedTour/Homepage';
-import isGuidedTourCompleted from '../../components/GuidedTour/utils/isGuidedTourCompleted';
-import { useContentTypes } from '../../hooks/useContentTypes';
-import { useEnterprise } from '../../hooks/useEnterprise';
 
-import cornerOrnamentPath from './assets/corner-ornament.svg';
-import ContentBlocks from './ContentBlocks';
-import HomeHeader from './HomeHeader';
-import SocialLinks from './SocialLinks';
 
-const LogoContainer = styled(Box)`
-  position: absolute;
-  top: 0;
-  right: 0;
-
-  img {
-    width: ${150 / 16}rem;
-  }
-`;
 
 export const HomePageCE = () => {
-  // Temporary until we develop the menu API
-  const { collectionTypes, singleTypes, isLoading: isLoadingForModels } = useContentTypes();
-  const { guidedTourState, isGuidedTourVisible, isSkipped } = useGuidedTour();
-  const showGuidedTour =
-    !isGuidedTourCompleted(guidedTourState) && isGuidedTourVisible && !isSkipped;
-  const { push } = useHistory();
-  const handleClick = (e) => {
-    e.preventDefault();
-
-    push('/plugins/content-type-builder/content-types/create-content-type');
-  };
-
-  const hasAlreadyCreatedContentTypes = useMemo(() => {
-    const filterContentTypes = (contentTypes) => contentTypes.filter((c) => c.isDisplayed);
-
-    return (
-      filterContentTypes(collectionTypes).length > 1 || filterContentTypes(singleTypes).length > 0
-    );
-  }, [collectionTypes, singleTypes]);
-
-  if (isLoadingForModels) {
-    return <LoadingIndicatorPage />;
-  }
 
   return (
-    <Layout>
-      <FormattedMessage id="HomePage.helmet.title" defaultMessage="Homepage">
-        {(title) => <Helmet title={title[0]} />}
-      </FormattedMessage>
-      <Main>
-        <LogoContainer>
-          <img alt="" aria-hidden src={cornerOrnamentPath} />
-        </LogoContainer>
-        <Box padding={10}>
-          <Grid>
-            <GridItem col={8} s={12}>
-              <HomeHeader
-                onCreateCT={handleClick}
-                hasCreatedContentType={hasAlreadyCreatedContentTypes}
-              />
-            </GridItem>
-          </Grid>
-          <Grid gap={6}>
-            <GridItem col={8} s={12}>
-              {showGuidedTour ? <GuidedTourHomepage /> : <ContentBlocks />}
-            </GridItem>
-            <GridItem col={4} s={12}>
-              <SocialLinks />
-            </GridItem>
-          </Grid>
-        </Box>
-      </Main>
-    </Layout>
+     
+          <div className="p-4 flex flex-wrap items-center justify-center">
+            <div className="flex-shrink-0 relative overflow-hidden bg-orange-500 rounded-lg max-w-xs shadow-lg">
+              <svg className="absolute bottom-0 left-0 mb-2" viewBox="0 0 375 283" fill="none" style={{ transform: 'scale(1.5)', opacity: '0.1' }}>
+                <rect x="159.52" y={175} width={152} height={152} rx={8} transform="rotate(-45 159.52 175)" fill="white" />
+                <rect y="107.48" width={152} height={152} rx={8} transform="rotate(-45 0 107.48)" fill="white" />
+              </svg>
+              <div className="relative  flex items-center justify-center">
+                <div className="block absolute w-48 h-48 bottom-0 left-0 -mb-24 ml-3" style={{ background: 'radial-gradient(black, transparent 60%)', transform: 'rotate3d(0, 0, 1, 20deg) scale3d(1, 0.6, 1)', opacity: '0.2' }} />
+                <img className="relative w-24 mt-2" src="https://user-images.githubusercontent.com/2805249/64069899-8bdaa180-cc97-11e9-9b19-1a9e1a254c18.png" alt="" />
+              </div>
+              <div className="relative text-white px-6 pb-6 mt-">
+                <span className="block opacity-75 -mb-1">Indoor</span>
+                <div className="flex justify-between">
+                  <span className="block font-semibold text-xl">Peace Lily</span>
+                </div>
+              </div>
+            </div>
+          </div>
   );
 };
 
 function HomePageSwitch() {
-  const HomePage = useEnterprise(
-    HomePageCE,
-    // eslint-disable-next-line import/no-cycle
-    async () => (await import('../../../../ee/admin/pages/HomePage')).HomePageEE
-  );
+  const HomePage = HomePageCE
 
   // block rendering until the EE component is fully loaded
   if (!HomePage) {

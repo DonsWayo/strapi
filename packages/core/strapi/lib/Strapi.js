@@ -29,7 +29,6 @@ const createUpdateNotifier = require('./utils/update-notifier');
 const createStartupLogger = require('./utils/startup-logger');
 const createStrapiFetch = require('./utils/fetch');
 const { LIFECYCLES } = require('./utils/lifecycles');
-const ee = require('./utils/ee');
 const contentTypesRegistry = require('./core/registries/content-types');
 const servicesRegistry = require('./core/registries/services');
 const policiesRegistry = require('./core/registries/policies');
@@ -123,13 +122,7 @@ class Strapi {
 
     createUpdateNotifier(this).notify();
 
-    Object.defineProperty(this, 'EE', {
-      get: () => {
-        ee.init(this.dirs.app.root, this.log);
-        return ee.isEE;
-      },
-      configurable: false,
-    });
+
   }
 
   get config() {
@@ -457,10 +450,6 @@ class Strapi {
     });
 
     await this.db.schema.sync();
-
-    if (this.EE) {
-      await ee.checkLicense({ strapi: this });
-    }
 
     await this.hook('strapi::content-types.afterSync').call({
       oldContentTypes,

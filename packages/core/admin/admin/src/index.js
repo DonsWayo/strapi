@@ -7,6 +7,8 @@ import { Components, Fields, Middlewares, Reducers } from './core/apis';
 import plugins from './plugins';
 import appReducers from './reducers';
 
+import './style.css';
+
 window.strapi = {
   backendURL: process.env.STRAPI_ADMIN_BACKEND_URL,
   isEE: false,

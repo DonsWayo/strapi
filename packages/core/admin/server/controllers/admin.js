@@ -8,7 +8,6 @@ const { exists } = require('fs-extra');
 const { env } = require('@strapi/utils');
 const { isUsingTypeScript } = require('@strapi/typescript-utils');
 // eslint-disable-next-line node/no-extraneous-require
-const ee = require('@strapi/strapi/lib/utils/ee');
 
 const {
   validateUpdateProjectSettings,
@@ -28,7 +27,7 @@ module.exports = {
   async getProjectType() {
     // FIXME
     try {
-      return { data: { isEE: strapi.EE, features: ee.features.list() } };
+      return { data: { isEE: strapi.EE, features: [] } };
     } catch (err) {
       return { data: { isEE: false, features: [] } };
     }

@@ -4,46 +4,24 @@
  *
  */
 
-import React, { lazy, Suspense, useEffect, useMemo } from 'react';
+import React, { lazy, Suspense, useEffect } from 'react';
 
-import { LoadingIndicatorPage, useStrapiApp, useTracking } from '@strapi/helper-plugin';
+import { LoadingIndicatorPage, useTracking } from '@strapi/helper-plugin';
 import { DndProvider } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
 import { useDispatch, useSelector } from 'react-redux';
 import { Route, Switch } from 'react-router-dom';
 
 import GuidedTourModal from '../../components/GuidedTour/Modal';
-import LeftMenu from '../../components/LeftMenu';
 import { useConfigurations, useMenu } from '../../hooks';
 import AppLayout from '../../layouts/AppLayout';
-import { createRoute } from '../../utils';
 import { SET_APP_RUNTIME_STATUS } from '../App/constants';
 
 import Onboarding from './Onboarding';
 
-const CM = lazy(() =>
-  import(/* webpackChunkName: "content-manager" */ '../../content-manager/pages/App')
-);
-const HomePage = lazy(() => import(/* webpackChunkName: "Admin_homePage" */ '../HomePage'));
-const InstalledPluginsPage = lazy(() =>
-  import(/* webpackChunkName: "Admin_pluginsPage" */ '../InstalledPluginsPage')
-);
-const MarketplacePage = lazy(() =>
-  import(/* webpackChunkName: "Admin_marketplace" */ '../MarketplacePage')
-);
-const NotFoundPage = lazy(() =>
-  import(/* webpackChunkName: "Admin_NotFoundPage" */ '../NotFoundPage')
-);
-const InternalErrorPage = lazy(() =>
-  import(/* webpackChunkName: "Admin_InternalErrorPage" */ '../InternalErrorPage')
-);
 
-const ProfilePage = lazy(() =>
-  import(/* webpackChunkName: "Admin_profilePage" */ '../ProfilePage')
-);
-const SettingsPage = lazy(() =>
-  import(/* webpackChunkName: "Admin_settingsPage" */ '../SettingsPage')
-);
+const HomePage = lazy(() => import(/* webpackChunkName: "Admin_homePage" */ '../HomePage'));
+
 
 // Simple hook easier for testing
 /**
@@ -69,15 +47,10 @@ const useTrackUsage = () => {
 
 const Admin = () => {
   useTrackUsage();
-  const { isLoading, generalSectionLinks, pluginsSectionLinks } = useMenu();
-  const { menu } = useStrapiApp();
+  const { isLoading } = useMenu();
   const { showTutorials } = useConfigurations();
 
-  const routes = useMemo(() => {
-    return menu
-      .filter((link) => link.Component)
-      .map(({ to, Component, exact }) => createRoute(Component, to, exact));
-  }, [menu]);
+
 
   if (isLoading) {
     return <LoadingIndicatorPage />;
@@ -86,30 +59,11 @@ const Admin = () => {
   return (
     <DndProvider backend={HTML5Backend}>
       <AppLayout
-        sideNav={
-          <LeftMenu
-            generalSectionLinks={generalSectionLinks}
-            pluginsSectionLinks={pluginsSectionLinks}
-          />
-        }
+       
       >
         <Suspense fallback={<LoadingIndicatorPage />}>
           <Switch>
             <Route path="/" component={HomePage} exact />
-            <Route path="/me" component={ProfilePage} exact />
-            <Route path="/content-manager" component={CM} />
-            {routes}
-            <Route path="/settings/:settingId" component={SettingsPage} />
-            <Route path="/settings" component={SettingsPage} exact />
-            <Route path="/marketplace">
-              <MarketplacePage />
-            </Route>
-            <Route path="/list-plugins" exact>
-              <InstalledPluginsPage />
-            </Route>
-            <Route path="/404" component={NotFoundPage} />
-            <Route path="/500" component={InternalErrorPage} />
-            <Route path="" component={NotFoundPage} />
           </Switch>
         </Suspense>
         <GuidedTourModal />
