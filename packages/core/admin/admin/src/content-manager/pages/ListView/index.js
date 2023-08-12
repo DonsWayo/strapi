@@ -46,7 +46,6 @@ import { bindActionCreators, compose } from 'redux';
 import styled from 'styled-components';
 
 import { INJECT_COLUMN_IN_TABLE } from '../../../exposedHooks';
-import { useEnterprise } from '../../../hooks/useEnterprise';
 import { selectAdminPermissions } from '../../../pages/App/selectors';
 import { InjectionZone } from '../../../shared/components';
 import AttributeFilter from '../../components/AttributeFilter';
@@ -116,27 +115,8 @@ function ListView({
   const hasDraftAndPublish = options?.draftAndPublish ?? false;
   const hasReviewWorkflows = options?.reviewWorkflows ?? false;
 
-  const reviewWorkflowColumns = useEnterprise(
-    REVIEW_WORKFLOW_COLUMNS_CE,
-    async () =>
-      (
-        await import(
-          '../../../../../ee/admin/content-manager/pages/ListView/ReviewWorkflowsColumn/constants'
-        )
-      ).REVIEW_WORKFLOW_COLUMNS_EE,
-    {
-      enabled: !!options?.reviewWorkflows,
-    }
-  );
-  const ReviewWorkflowsStage = useEnterprise(
-    REVIEW_WORKFLOW_COLUMNS_CELL_CE,
-    async () =>
-      (await import('../../../../../ee/admin/content-manager/pages/ListView/ReviewWorkflowsColumn'))
-        .ReviewWorkflowsStageEE,
-    {
-      enabled: hasReviewWorkflows,
-    }
-  );
+  const reviewWorkflowColumns = REVIEW_WORKFLOW_COLUMNS_CE;
+  const ReviewWorkflowsStage = REVIEW_WORKFLOW_COLUMNS_CELL_CE
 
   const { post, del } = fetchClient;
 

@@ -4,7 +4,6 @@ import { hasPermissions, useRBACProvider, useStrapiApp, useAppInfo } from '@stra
 import { useSelector } from 'react-redux';
 
 import { selectAdminPermissions } from '../../pages/App/selectors';
-import { useEnterprise } from '../useEnterprise';
 
 import { LINKS_CE } from './constants';
 import formatLinks from './utils/formatLinks';
@@ -20,22 +19,7 @@ const useSettingsMenu = () => {
   const { settings } = useStrapiApp();
   const permissions = useSelector(selectAdminPermissions);
 
-  const { global: globalLinks, admin: adminLinks } = useEnterprise(
-    LINKS_CE,
-    async () => (await import('../../../../ee/admin/hooks/useSettingsMenu/constants')).LINKS_EE,
-    {
-      combine(ceLinks, eeLinks) {
-        return {
-          admin: [...eeLinks.admin, ...ceLinks.admin],
-          global: [...ceLinks.global, ...eeLinks.global],
-        };
-      },
-      defaultValue: {
-        admin: [],
-        global: [],
-      },
-    }
-  );
+  const { global: globalLinks, admin: adminLinks } = LINKS_CE
 
   const addPermissions = useCallback(
     (link) => {

@@ -22,7 +22,6 @@ import PropTypes from 'prop-types';
 import { useIntl } from 'react-intl';
 import { Link, useHistory } from 'react-router-dom';
 
-import { useEnterprise } from '../../../../../hooks/useEnterprise';
 import { getFullName } from '../../../../../utils';
 import { usePluginsQueryParams } from '../../../../hooks';
 import { getTrad } from '../../../../utils';
@@ -52,18 +51,7 @@ export const TableRows = ({
   const pluginsQueryParams = usePluginsQueryParams();
   const [{ query }] = useQueryParams();
   const { formatAPIError } = useAPIErrorHandler(getTrad);
-  const ReviewWorkflowsStage = useEnterprise(
-    REVIEW_WORKFLOW_COLUMNS_CE,
-    async () =>
-      (
-        await import(
-          '../../../../../../../ee/admin/content-manager/pages/ListView/ReviewWorkflowsColumn'
-        )
-      ).ReviewWorkflowsStageEE,
-    {
-      enabled: hasReviewWorkflows,
-    }
-  );
+  const ReviewWorkflowsStage = REVIEW_WORKFLOW_COLUMNS_CE
 
   /**
    *

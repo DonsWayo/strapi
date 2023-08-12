@@ -13,11 +13,10 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Route, Switch } from 'react-router-dom';
 
 import GuidedTourModal from '../../components/GuidedTour/Modal';
-import { useConfigurations, useMenu } from '../../hooks';
+import { useMenu } from '../../hooks';
 import AppLayout from '../../layouts/AppLayout';
 import { SET_APP_RUNTIME_STATUS } from '../App/constants';
 
-import Onboarding from './Onboarding';
 
 
 const HomePage = lazy(() => import(/* webpackChunkName: "Admin_homePage" */ '../HomePage'));
@@ -48,7 +47,6 @@ const useTrackUsage = () => {
 const Admin = () => {
   useTrackUsage();
   const { isLoading } = useMenu();
-  const { showTutorials } = useConfigurations();
 
 
 
@@ -68,7 +66,6 @@ const Admin = () => {
         </Suspense>
         <GuidedTourModal />
 
-        {showTutorials && <Onboarding />}
       </AppLayout>
     </DndProvider>
   );

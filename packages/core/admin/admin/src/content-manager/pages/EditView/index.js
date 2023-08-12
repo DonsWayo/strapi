@@ -43,12 +43,7 @@ const EditView = ({ allowedActions, isSingleType, goBack, slug, id, origin, user
   const permissions = useSelector(selectAdminPermissions);
   const location = useLocation();
   const toggleNotification = useNotification();
-  const Information = useEnterprise(
-    InformationBoxCE,
-    async () =>
-      (await import('../../../../../ee/admin/content-manager/pages/EditView/InformationBox'))
-        .InformationBoxEE
-  );
+  const Information = InformationBoxCE
 
   useOnce(() => {
     /**

@@ -43,13 +43,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@adobe/css-tools@npm:^4.0.1":
-  version: 4.0.1
-  resolution: "@adobe/css-tools@npm:4.0.1"
-  checksum: 80226e2229024c21da9ffa6b5cd4a34b931f071e06f45aba4777ade071d7a6c94605cf73b13718b0c4b34e8b124c65c607b82eaa53a326d3eb73d9682a04a593
-  languageName: node
-  linkType: hard
-
 "@alloc/quick-lru@npm:^5.2.0":
   version: 5.2.0
   resolution: "@alloc/quick-lru@npm:5.2.0"
@@ -4370,7 +4363,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@juggle/resize-observer@npm:3.4.0, @juggle/resize-observer@npm:^3.3.1":
+"@juggle/resize-observer@npm:^3.3.1":
   version: 3.4.0
   resolution: "@juggle/resize-observer@npm:3.4.0"
   checksum: 2505028c05cc2e17639fcad06218b1c4b60f932a4ebb4b41ab546ef8c157031ae377e3f560903801f6d01706dbefd4943b6c4704bf19ed86dfa1c62f1473a570
@@ -7214,22 +7207,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@strapi/admin-test-utils@workspace:*, @strapi/admin-test-utils@workspace:packages/admin-test-utils":
-  version: 0.0.0-use.local
-  resolution: "@strapi/admin-test-utils@workspace:packages/admin-test-utils"
-  dependencies:
-    "@juggle/resize-observer": 3.4.0
-    "@testing-library/jest-dom": 5.16.5
-    eslint-config-custom: 4.12.4
-    jest-styled-components: 7.1.1
-    redux: ^4.2.1
-    tsconfig: 4.12.4
-    whatwg-fetch: 3.6.2
-  peerDependencies:
-    redux: ^4.2.1
-  languageName: unknown
-  linkType: soft
-
 "@strapi/admin@4.12.4, @strapi/admin@workspace:packages/core/admin":
   version: 0.0.0-use.local
   resolution: "@strapi/admin@workspace:packages/core/admin"
@@ -8299,23 +8276,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@testing-library/jest-dom@npm:5.16.5":
-  version: 5.16.5
-  resolution: "@testing-library/jest-dom@npm:5.16.5"
-  dependencies:
-    "@adobe/css-tools": ^4.0.1
-    "@babel/runtime": ^7.9.2
-    "@types/testing-library__jest-dom": ^5.9.1
-    aria-query: ^5.0.0
-    chalk: ^3.0.0
-    css.escape: ^1.5.1
-    dom-accessibility-api: ^0.5.6
-    lodash: ^4.17.15
-    redent: ^3.0.0
-  checksum: 94911f901a8031f3e489d04ac057cb5373621230f5d92bed80e514e24b069fb58a3166d1dd86963e55f078a1bd999da595e2ab96ed95f452d477e272937d792a
-  languageName: node
-  linkType: hard
-
 "@testing-library/react-hooks@npm:8.0.1":
   version: 8.0.1
   resolution: "@testing-library/react-hooks@npm:8.0.1"
@@ -8855,16 +8815,6 @@ __metadata:
   dependencies:
     "@types/istanbul-lib-report": "*"
   checksum: f1ad54bc68f37f60b30c7915886b92f86b847033e597f9b34f2415acdbe5ed742fa559a0a40050d74cdba3b6a63c342cac1f3a64dba5b68b66a6941f4abd7903
-  languageName: node
-  linkType: hard
-
-"@types/jest@npm:*":
-  version: 29.0.1
-  resolution: "@types/jest@npm:29.0.1"
-  dependencies:
-    expect: ^29.0.0
-    pretty-format: ^29.0.0
-  checksum: efd30357c290b5d385382302fae927885f2a9bde0aa45d4c7f970fa6e6d750df83edef73f16d1e9a005e08a5bcd7c6ff56a43f5ac2534a517df9ad1e44dd30c4
   languageName: node
   linkType: hard
 
@@ -9410,15 +9360,6 @@ __metadata:
     "@types/node": "*"
     minipass: ^4.0.0
   checksum: 48a1f6b8665ed03f37f74966cfe991a33d6e85cee28aaa6ef42c7ca8448cdbc1e2ca96b473b6b53f1d7bd91423ae0dcfe54a295607d7ac4b4cbb9dbf167df7fa
-  languageName: node
-  linkType: hard
-
-"@types/testing-library__jest-dom@npm:^5.9.1":
-  version: 5.14.5
-  resolution: "@types/testing-library__jest-dom@npm:5.14.5"
-  dependencies:
-    "@types/jest": "*"
-  checksum: dcb05416758fe88c1f4f3aa97b4699fcb46a5ed8f53c6b81721e66155452a48caf12ecb97dfdfd4130678e65efd66b9fca0ac434b3d63affec84842a84a6bf38
   languageName: node
   linkType: hard
 
@@ -13517,13 +13458,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"css.escape@npm:^1.5.1":
-  version: 1.5.1
-  resolution: "css.escape@npm:1.5.1"
-  checksum: f6d38088d870a961794a2580b2b2af1027731bb43261cfdce14f19238a88664b351cc8978abc20f06cc6bbde725699dec8deb6fe9816b139fc3f2af28719e774
-  languageName: node
-  linkType: hard
-
 "cssdb@npm:^7.7.0":
   version: 7.7.0
   resolution: "cssdb@npm:7.7.0"
@@ -14172,7 +14106,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"dom-accessibility-api@npm:^0.5.6, dom-accessibility-api@npm:^0.5.9":
+"dom-accessibility-api@npm:^0.5.9":
   version: 0.5.14
   resolution: "dom-accessibility-api@npm:0.5.14"
   checksum: 782c813f75a09ba6735ef03b5e1624406a3829444ae49d5bdedd272a49d437ae3354f53e02ffc8c9fd9165880250f41546538f27461f839dd4ea1234e77e8d5e
@@ -19966,17 +19900,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jest-styled-components@npm:7.1.1":
-  version: 7.1.1
-  resolution: "jest-styled-components@npm:7.1.1"
-  dependencies:
-    "@adobe/css-tools": ^4.0.1
-  peerDependencies:
-    styled-components: ">= 5"
-  checksum: 1376d1211855c459e59e6b030af7294519cd2dd78169a2cb0df185ff4390fff417ab51be3dd520f1e975d2f391f50ff266e803c168ff9f03f3ff7ebbb823d2d7
-  languageName: node
-  linkType: hard
-
 "jest-util@npm:^29.0.0":
   version: 29.0.0
   resolution: "jest-util@npm:29.0.0"
@@ -20647,27 +20570,6 @@ __metadata:
     react: ^18.2.0
     react-dom: ^18.2.0
     react-router-dom: 5.3.4
-    styled-components: 5.3.3
-  languageName: unknown
-  linkType: soft
-
-"kitchensink@workspace:examples/kitchensink":
-  version: 0.0.0-use.local
-  resolution: "kitchensink@workspace:examples/kitchensink"
-  dependencies:
-    "@strapi/provider-email-mailgun": 4.12.4
-    "@strapi/provider-upload-aws-s3": 4.12.4
-    "@strapi/provider-upload-cloudinary": 4.12.4
-    "@strapi/strapi": 4.12.4
-    lodash: 4.17.21
-    mysql: 2.18.1
-    mysql2: 3.6.0
-    passport-google-oauth2: 0.2.0
-    pg: 8.11.1
-    react: ^18.2.0
-    react-dom: ^18.2.0
-    react-router-dom: 5.3.4
-    sqlite3: 5.1.2
     styled-components: 5.3.3
   languageName: unknown
   linkType: soft
@@ -28921,7 +28823,6 @@ __metadata:
     "@babel/eslint-parser": ^7.19.1
     "@babel/preset-react": 7.18.6
     "@playwright/test": 1.37.0-alpha-jul-20-2023
-    "@strapi/admin-test-utils": "workspace:*"
     "@strapi/eslint-config": 0.2.0
     "@swc/cli": 0.1.62
     "@swc/core": 1.3.58
@@ -31555,13 +31456,6 @@ __metadata:
   dependencies:
     iconv-lite: 0.6.3
   checksum: 7087810c410aa9b689cbd6af8773341a53cdc1f3aae2a882c163bd5522ec8ca4cdfc269aef417a5792f411807d5d77d50df4c24e3abb00bb60192858a40cc675
-  languageName: node
-  linkType: hard
-
-"whatwg-fetch@npm:3.6.2":
-  version: 3.6.2
-  resolution: "whatwg-fetch@npm:3.6.2"
-  checksum: ee976b7249e7791edb0d0a62cd806b29006ad7ec3a3d89145921ad8c00a3a67e4be8f3fb3ec6bc7b58498724fd568d11aeeeea1f7827e7e1e5eae6c8a275afed
   languageName: node
   linkType: hard
 
