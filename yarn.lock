@@ -7391,30 +7391,6 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@strapi/plugin-color-picker@4.12.4, @strapi/plugin-color-picker@workspace:packages/plugins/color-picker":
-  version: 0.0.0-use.local
-  resolution: "@strapi/plugin-color-picker@workspace:packages/plugins/color-picker"
-  dependencies:
-    "@strapi/design-system": 1.9.0
-    "@strapi/helper-plugin": 4.12.4
-    "@strapi/icons": 1.9.0
-    "@testing-library/react": 14.0.0
-    prop-types: ^15.8.1
-    react: ^18.2.0
-    react-colorful: 5.6.1
-    react-dom: ^18.2.0
-    react-intl: 6.4.1
-    react-router-dom: 5.3.4
-    styled-components: 5.3.3
-  peerDependencies:
-    "@strapi/strapi": ^4.4.0
-    react: ^17.0.0 || ^18.0.0
-    react-dom: ^17.0.0 || ^18.0.0
-    react-router-dom: 5.3.4
-    styled-components: 5.3.3
-  languageName: unknown
-  linkType: soft
-
 "@strapi/plugin-content-manager@4.12.4, @strapi/plugin-content-manager@workspace:packages/core/content-manager":
   version: 0.0.0-use.local
   resolution: "@strapi/plugin-content-manager@workspace:packages/core/content-manager"
@@ -16527,7 +16503,6 @@ __metadata:
   resolution: "getstarted@workspace:examples/getstarted"
   dependencies:
     "@strapi/icons": 1.9.0
-    "@strapi/plugin-color-picker": 4.12.4
     "@strapi/plugin-documentation": 4.12.4
     "@strapi/plugin-graphql": 4.12.4
     "@strapi/plugin-i18n": 4.12.4
@@ -25815,7 +25790,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-colorful@npm:5.6.1, react-colorful@npm:^5.1.2":
+"react-colorful@npm:^5.1.2":
   version: 5.6.1
   resolution: "react-colorful@npm:5.6.1"
   peerDependencies:

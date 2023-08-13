@@ -210,12 +210,6 @@ module.exports = {
       many_way_tags: { type: 'relation', relation: 'oneToMany', target: 'api::tag.tag' },
       morph_to_one: { type: 'relation', relation: 'morphToOne' },
       morph_to_many: { type: 'relation', relation: 'morphToMany' },
-      custom_field: { type: 'string', customField: 'plugin::color-picker.color' },
-      custom_field_with_default_options: {
-        type: 'string',
-        regex: '^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$',
-        customField: 'plugin::color-picker.color',
-      },
       cats: { type: 'dynamiczone', components: ['basic.relation', 'basic.simple'] },
       createdAt: { type: 'datetime' },
       updatedAt: { type: 'datetime' },
