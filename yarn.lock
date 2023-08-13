@@ -7425,44 +7425,6 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@strapi/plugin-content-type-builder@4.12.4, @strapi/plugin-content-type-builder@workspace:packages/core/content-type-builder":
-  version: 0.0.0-use.local
-  resolution: "@strapi/plugin-content-type-builder@workspace:packages/core/content-type-builder"
-  dependencies:
-    "@sindresorhus/slugify": 1.1.0
-    "@strapi/admin": 4.12.4
-    "@strapi/design-system": 1.9.0
-    "@strapi/generators": 4.12.4
-    "@strapi/helper-plugin": 4.12.4
-    "@strapi/icons": 1.9.0
-    "@strapi/utils": 4.12.4
-    "@testing-library/react": 14.0.0
-    "@testing-library/react-hooks": 8.0.1
-    fs-extra: 10.0.0
-    history: ^4.9.0
-    immer: 9.0.19
-    lodash: 4.17.21
-    pluralize: ^8.0.0
-    prop-types: ^15.8.1
-    qs: 6.11.1
-    react: ^18.2.0
-    react-dom: ^18.2.0
-    react-helmet: ^6.1.0
-    react-intl: 6.4.1
-    react-redux: 8.1.1
-    react-router-dom: 5.3.4
-    redux: ^4.2.1
-    reselect: 4.1.7
-    styled-components: 5.3.3
-    yup: 0.32.9
-  peerDependencies:
-    react: ^17.0.0 || ^18.0.0
-    react-dom: ^17.0.0 || ^18.0.0
-    react-router-dom: 5.3.4
-    styled-components: 5.3.3
-  languageName: unknown
-  linkType: soft
-
 "@strapi/plugin-documentation@4.12.4, @strapi/plugin-documentation@workspace:packages/plugins/documentation":
   version: 0.0.0-use.local
   resolution: "@strapi/plugin-documentation@workspace:packages/plugins/documentation"
@@ -7796,7 +7758,6 @@ __metadata:
     "@strapi/logger": 4.12.4
     "@strapi/permissions": 4.12.4
     "@strapi/plugin-content-manager": 4.12.4
-    "@strapi/plugin-content-type-builder": 4.12.4
     "@strapi/plugin-email": 4.12.4
     "@strapi/plugin-upload": 4.12.4
     "@strapi/typescript-utils": 4.12.4
@@ -8091,28 +8052,6 @@ __metadata:
     lz-string: ^1.5.0
     pretty-format: ^27.0.2
   checksum: b145f43cd06ff083012cf2503aff6ccba97ff80715fcb106fe64af690f5536557bf24d37b97e8d685bbe3803d7f71d685ce71426cb1b9e250c3611e4372dcfa9
-  languageName: node
-  linkType: hard
-
-"@testing-library/react-hooks@npm:8.0.1":
-  version: 8.0.1
-  resolution: "@testing-library/react-hooks@npm:8.0.1"
-  dependencies:
-    "@babel/runtime": ^7.12.5
-    react-error-boundary: ^3.1.0
-  peerDependencies:
-    "@types/react": ^16.9.0 || ^17.0.0
-    react: ^16.9.0 || ^17.0.0
-    react-dom: ^16.9.0 || ^17.0.0
-    react-test-renderer: ^16.9.0 || ^17.0.0
-  peerDependenciesMeta:
-    "@types/react":
-      optional: true
-    react-dom:
-      optional: true
-    react-test-renderer:
-      optional: true
-  checksum: 7fe44352e920deb5cb1876f80d64e48615232072c9d5382f1e0284b3aab46bb1c659a040b774c45cdf084a5257b8fe463f7e08695ad8480d8a15635d4d3d1f6d
   languageName: node
   linkType: hard
 
@@ -25975,7 +25914,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-error-boundary@npm:3.1.4, react-error-boundary@npm:^3.1.0":
+"react-error-boundary@npm:3.1.4":
   version: 3.1.4
   resolution: "react-error-boundary@npm:3.1.4"
   dependencies:

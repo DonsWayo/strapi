@@ -94,7 +94,7 @@ const buildAdmin = async () => {
               if (isObject(error)) {
                 return acc + error.message;
               }
-
+              console.log(error)
               return acc + error.join('\n\n');
             }, '')
           )
